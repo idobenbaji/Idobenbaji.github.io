@@ -1,154 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
 :root {
-  --bg: #d8c8bb;         /* beige background like your screenshot */
-  --text: #072f2b;       /* dark green text */
-  --line: rgba(7, 47, 43, 0.22);
-  --sidebar-width: 340px;
+  --bg: #d7c9bc;     /* beige */
+  --text: #08322e;   /* dark green */
+  --left-width: 38vw;
+  --left-max: 430px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.45;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
-/* Fixed left column */
+/* LEFT: fixed name + menu */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: var(--sidebar-width);
+  width: min(var(--left-width), var(--left-max));
   height: 100vh;
-  padding: 2.2rem 2rem;
-  border-right: 1px solid var(--line);
-  overflow-y: auto;
+  padding: 26px 34px;
   background: var(--bg);
 }
 
-.site-name {
-  margin: 0 0 2rem;
-  font-size: clamp(2rem, 2.5vw, 2.8rem);
+.sidebar h1 {
+  margin: 0 0 34px 0;
+  font-size: clamp(42px, 4.3vw, 62px);
+  line-height: 1.02;
   font-weight: 700;
-  letter-spacing: 0.2px;
-  line-height: 1.1;
 }
 
-.menu {
+.sidebar nav {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 4px;
 }
 
-.menu a {
-  color: var(--text);
+.sidebar nav a {
   text-decoration: none;
-  font-size: clamp(1.8rem, 2vw, 2.3rem);
-  line-height: 1.1;
+  color: var(--text);
+  font-size: clamp(34px, 3.3vw, 52px);
+  line-height: 1.03;
+  font-weight: 500;
 }
 
-.menu a:hover,
-.menu a:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-/* Right content column */
+/* RIGHT: scrolling area */
 .content {
-  margin-left: var(--sidebar-width);
+  margin-left: min(var(--left-width), var(--left-max));
   min-height: 100vh;
 }
 
-/* Landing section = photo only, flush-right */
+/* first screen only photo, flush right */
 .landing {
   min-height: 100vh;
   display: flex;
-  justify-content: flex-end;   /* flush right */
+  justify-content: flex-end;
   align-items: center;
-  padding: 2rem 3.2rem 2rem 2rem;
-  border-bottom: 1px solid var(--line);
+  padding: 0;
 }
 
-.landing-photo {
-  width: min(540px, 52vw);
-  max-height: 84vh;
-  object-fit: cover;
+.profile-photo {
   display: block;
+  width: min(52vw, 760px);
+  max-height: 92vh;
+  object-fit: cover;
 }
 
-/* Content sections */
+/* content sections below fold */
 section:not(.landing) {
-  padding: 3rem 3.2rem;
-  border-bottom: 1px solid var(--line);
-  scroll-margin-top: 1rem;
+  padding: 56px 56px 50px 56px;
 }
 
 h2 {
-  margin: 0 0 0.8rem;
-  font-size: 2rem;
-  line-height: 1.15;
+  margin: 0 0 12px 0;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.05;
 }
 
-h3 {
-  margin: 1.3rem 0 0.5rem;
-  font-size: 1.35rem;
+p, li {
+  font-size: 31px;
   line-height: 1.2;
-}
-
-p,
-li {
-  font-size: 1.14rem;
-}
-
-ul {
-  margin-top: 0.45rem;
-  padding-left: 1.25rem;
-}
-
-li {
-  margin-bottom: 0.62rem;
 }
 
 iframe {
   width: 100%;
-  height: 950px;
-  border: 1px solid var(--line);
+  height: 920px;
+  border: none;
   background: #fff;
 }
 
-/* Mobile/tablet behavior */
+/* mobile */
 @media (max-width: 980px) {
   .sidebar {
     position: sticky;
     width: 100%;
     height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-    padding: 1rem 1rem 0.9rem;
-    z-index: 20;
+    padding: 16px 16px 12px;
+    z-index: 10;
   }
 
-  .site-name {
-    margin-bottom: 0.8rem;
-    font-size: 1.7rem;
+  .sidebar h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
   }
 
-  .menu {
+  .sidebar nav {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.45rem 0.9rem;
+    gap: 8px 14px;
   }
 
-  .menu a {
-    font-size: 1.2rem;
+  .sidebar nav a {
+    font-size: 28px;
   }
 
   .content {
@@ -158,15 +128,18 @@ iframe {
   .landing {
     min-height: 70vh;
     justify-content: center;
-    padding: 1.2rem;
+    padding: 12px;
   }
 
-  .landing-photo {
-    width: min(500px, 90vw);
+  .profile-photo {
+    width: min(92vw, 560px);
+    max-height: 70vh;
   }
 
   section:not(.landing) {
-    padding: 2rem 1rem;
-    scroll-margin-top: 5rem;
+    padding: 28px 16px;
   }
+
+  h2 { font-size: 34px; }
+  p, li { font-size: 24px; }
 }
