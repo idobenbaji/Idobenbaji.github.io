@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #d7c9bc;     /* beige */
-  --text: #08322e;   /* dark green */
+  --bg: #d7c9bc;
+  --text: #08322e;
   --left-width: 36vw;
   --left-max: 460px;
 }
@@ -15,7 +15,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 /* LEFT: fixed name + menu */
@@ -30,24 +30,24 @@ body {
 }
 
 .sidebar h1 {
-  margin: 0 0 24px 0;
-  font-size: clamp(30px, 2.8vw, 42px);
-  line-height: 1.03;
-  font-weight: 700;
-  white-space: nowrap; /* keep on one line */
+  margin: 0 0 20px 0;
+  font-size: clamp(24px, 2.1vw, 34px);
+  line-height: 1.1;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .sidebar nav {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .sidebar nav a {
   text-decoration: none;
   color: var(--text);
-  font-size: clamp(24px, 2.3vw, 36px);
-  line-height: 1.05;
+  font-size: clamp(18px, 1.7vw, 26px);
+  line-height: 1.15;
   font-weight: 500;
 }
 
@@ -55,48 +55,62 @@ body {
 .content {
   margin-left: min(var(--left-width), var(--left-max));
   min-height: 100vh;
-  border-left: 1px solid rgba(8, 50, 46, 1.5);
+  border-left: 1px solid #111; /* black vertical divider */
 }
 
-/* first screen only photo, flush right */
+/* anchor positioning */
+section[id] {
+  scroll-margin-top: 24px;
+}
+
+/* landing */
 .landing {
   min-height: 100vh;
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) auto;
   align-items: center;
-  padding: 0 20px 0 0;
+  gap: 28px;
+  padding: 0 20px 0 26px;
+}
+
+.landing-about {
+  max-width: 680px;
+}
+
+.landing-about h2 {
+  margin-bottom: 8px;
 }
 
 .profile-photo {
   display: block;
-  width: min(44vw, 620px);
-  max-height: 84vh;
+  width: min(36vw, 560px);
+  max-height: 82vh;
   height: auto;
   object-fit: contain;
 }
 
-/* content sections below fold */
+/* content sections */
 section:not(.landing) {
-  padding: 44px 48px 42px 48px;
+  padding: 42px 48px 40px 48px;
 }
 
 h2 {
   margin: 0 0 10px 0;
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 600;
-  line-height: 1.08;
+  line-height: 1.2;
 }
 
 h3 {
-  margin: 18px 0 8px 0;
-  font-size: 30px;
+  margin: 16px 0 8px 0;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 p, li {
-  font-size: 23px;
-  line-height: 1.28;
+  font-size: 19px;
+  line-height: 1.45;
 }
 
 ul {
@@ -119,62 +133,78 @@ iframe {
   border: none;
   background: #fff;
 }
-section[id] {
-  scroll-margin-top: 24px;
-}
 
 /* mobile */
 @media (max-width: 980px) {
   .sidebar {
-  position: sticky;
-  width: 100%;
-  height: auto;
-  padding: 12px 10px 8px;
-  z-index: 10;
-  border-bottom: 1px solid rgba(8, 50, 46, 0.35);
-}
-section[id] {
-  scroll-margin-top: 110px;
-}
+    position: sticky;
+    width: 100%;
+    height: auto;
+    padding: 12px 10px 8px;
+    z-index: 10;
+    border-bottom: 1px solid rgba(8, 50, 46, 0.35);
+  }
 
   .sidebar h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: 24px;
+    margin-bottom: 6px;
     white-space: nowrap;
   }
 
- .sidebar nav {
-  flex-direction: row;
-  flex-wrap: nowrap;              
-  justify-content: space-between;
-  gap: 6px;
-}
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 6px;
+  }
 
-.sidebar nav a {
-  font-size: clamp(13px, 3.2vw, 16px);
-  white-space: nowrap;
-  line-height: 1;
-}
+  .sidebar nav a {
+    font-size: clamp(13px, 3.2vw, 16px);
+    white-space: nowrap;
+    line-height: 1;
+  }
 
   .content {
-  margin-left: 0;
-  border-left: none;
-  border-top: none;
-}
+    margin-left: 0;
+    border-left: none;
+    border-top: none;
+  }
 
+  section[id] {
+    scroll-margin-top: 110px;
+  }
+
+  /* only requested mobile landing adjustment:
+     move content up so About + photo fit on first screen */
   .landing {
-    min-height: 65vh;
-    justify-content: center;
-    padding: 10px;
+    min-height: calc(100vh - 108px);
+    grid-template-columns: 1fr;
+    align-content: start;
+    justify-items: center;
+    gap: 10px;
+    padding: 8px 12px 12px;
+  }
+
+  .landing-about {
+    max-width: 100%;
+  }
+
+  .landing-about h2 {
+    margin-bottom: 6px;
+  }
+
+  .landing-about p {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .profile-photo {
-    width: min(82vw, 460px);
-    max-height: 62vh;
+    width: min(76vw, 380px);
+    max-height: 38vh;
   }
 
   section:not(.landing) {
-    padding: 24px 14px;
+    padding: 28px 16px;
   }
 
   h2 { font-size: 30px; }
