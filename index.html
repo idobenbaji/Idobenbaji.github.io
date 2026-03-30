@@ -4,134 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ido Benbaji-Elhadad</title>
-  <style>
-    :root {
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #1d4ed8;
-      --bg: #ffffff;
-      --border: #e5e7eb;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 2.5rem 1.25rem 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .header-flex {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
-
-    .profile-img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-    }
-
-    h1 {
-      margin: 0 0 0.25rem;
-      font-size: 2rem;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: #fff;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 0.75rem 1.25rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.25rem;
-    }
-
-    section {
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h2 {
-      margin-top: 0;
-      font-size: 1.4rem;
-    }
-
-    h3 {
-      margin-bottom: 0.5rem;
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    li { margin-bottom: 0.75rem; }
-
-    .pub-links a {
-      margin-left: 0.45rem;
-      text-decoration: none;
-      color: var(--accent);
-      font-size: 0.95em;
-    }
-
-    .muted {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    footer {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 3rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <div class="header-flex">
-      <img src="assets/profile.jpg" alt="Ido Benbaji-Elhadad" class="profile-img" />
+    <div class="container header-flex">
+      <img
+        src="assets/profile.jpg"
+        alt="Ido Benbaji-Elhadad"
+        class="profile-img"
+      />
       <div>
         <h1>Ido Benbaji-Elhadad</h1>
         <p class="subtitle">Department of Linguistics and Philosophy, MIT</p>
@@ -140,7 +22,7 @@
   </header>
 
   <nav>
-    <div class="nav-inner">
+    <div class="container nav-inner">
       <a href="#about">About</a>
       <a href="#publications">Publications</a>
       <a href="#presentations">Presentations</a>
@@ -149,7 +31,7 @@
     </div>
   </nav>
 
-  <main>
+  <main class="container">
     <section id="about">
       <h2>About</h2>
       <p>
@@ -161,110 +43,31 @@
 
     <section id="publications">
       <h2>Publications</h2>
-      <p class="muted">
-        Replace each <code>href</code> with your real PDF/DOI/publisher links.  
-        Example local PDF path: <code>assets/pdfs/paper-name.pdf</code>
-      </p>
 
       <h3>Journal articles</h3>
       <ul>
-        <li>
-          <strong>Benbaji-Elhadad, I.</strong> Accepted with minor revisions.
-          Reconstruction, bare quantification, and the fourth reading.
-          <em>Natural Language Semantics</em>.
-          <span class="pub-links">
-            <a href="assets/pdfs/reconstruction-bare-quantification-fourth-reading.pdf" target="_blank">[PDF]</a>
-            <a href="PASTE_DOI_OR_PUBLISHER_LINK_HERE" target="_blank">[Link]</a>
-          </span>
-        </li>
-        <li>
-          <strong>Benbaji-Elhadad, I.</strong> Accepted with minor revisions.
-          A hitherto unnoticed sloppy reading of proper names.
-          <em>Snippets</em>.
-          <span class="pub-links">
-            <a href="assets/pdfs/sloppy-reading-proper-names.pdf" target="_blank">[PDF]</a>
-            <a href="PASTE_DOI_OR_PUBLISHER_LINK_HERE" target="_blank">[Link]</a>
-          </span>
-        </li>
-        <li>
-          <strong>Benbaji-Elhadad, I.</strong> &amp; O. Doron. Accepted with major revisions.
-          The varieties of relevance: Over-informative answers and the case for keeping relevance strong.
-          <em>Journal of Semantics</em>.
-          <span class="pub-links">
-            <a href="assets/pdfs/varieties-of-relevance.pdf" target="_blank">[PDF]</a>
-            <a href="PASTE_DOI_OR_PUBLISHER_LINK_HERE" target="_blank">[Link]</a>
-          </span>
-        </li>
+        <li><strong>Benbaji-Elhadad, I.</strong> Accepted with minor revisions. Reconstruction, bare quantification, and the fourth reading. <em>Natural Language Semantics</em>.</li>
+        <li><strong>Benbaji-Elhadad, I.</strong> Accepted with minor revisions. A hitherto unnoticed sloppy reading of proper names. <em>Snippets</em>.</li>
+        <li><strong>Benbaji-Elhadad, I.</strong> &amp; O. Doron. Accepted with major revisions. The varieties of relevance: Over-informative answers and the case for keeping relevance strong. <em>Journal of Semantics</em>.</li>
       </ul>
 
       <h3>Manuscripts</h3>
       <ul>
-        <li>
-          <strong>Benbaji-Elhadad, I.</strong> &amp; D. Pesetsky. 2024.
-          Ingredients of Ellipsis: E-extension and the Uniformity of Silence.
-          Manuscript, MIT.
-          <span class="pub-links">
-            <a href="assets/pdfs/ingredients-of-ellipsis.pdf" target="_blank">[PDF]</a>
-          </span>
-        </li>
+        <li><strong>Benbaji-Elhadad, I.</strong> &amp; D. Pesetsky. 2024. Ingredients of Ellipsis: E-extension and the Uniformity of Silence. Manuscript, MIT.</li>
       </ul>
 
       <h3>Conference proceedings</h3>
       <ul>
-        <li>
-          Feldcamp, Z. &amp; <strong>I. Benbaji-Elhadad</strong>. 2025.
-          A well-formedness condition on alternative generation. <em>WCCFL 43</em>.
-          <span class="pub-links"><a href="assets/pdfs/well-formedness-alternative-generation.pdf" target="_blank">[PDF]</a></span>
-        </li>
-        <li>
-          <strong>Benbaji-Elhadad, I.</strong> &amp; J. Wehbe. 2024.
-          On the semantics of unit fractions. <em>SuB28</em>: 131-149.
-          <span class="pub-links"><a href="assets/pdfs/semantics-unit-fractions.pdf" target="_blank">[PDF]</a></span>
-        </li>
-        <li>
-          <strong>Benbaji-Elhadad, I.</strong> &amp; O. Doron. 2024.
-          How is presupposition accommodation constrained, again?
-          <em>Amsterdam Colloquium 24</em>: 22-28.
-          <span class="pub-links"><a href="assets/pdfs/presupposition-accommodation-constrained.pdf" target="_blank">[PDF]</a></span>
-        </li>
-        <li>
-          <strong>Benbaji-Elhadad, I.</strong> 2023.
-          Preliminaries for a substitution of de re. <em>SALT33</em>: 358-378.
-          <span class="pub-links"><a href="assets/pdfs/preliminaries-substitution-de-re.pdf" target="_blank">[PDF]</a></span>
-        </li>
-        <li>
-          <strong>Benbaji-Elhadad, I.</strong>, O. Doron &amp; A. Hénot-Mortier. 2023.
-          Distinguishing levels of morphological derivation in word-embedding models.
-          <em>NELS53</em>: 63-76.
-          <span class="pub-links"><a href="assets/pdfs/morphological-derivation-word-embeddings.pdf" target="_blank">[PDF]</a></span>
-        </li>
-        <li>
-          <strong>Benbaji, I.</strong> &amp; O. Doron. 2023.
-          Adversative only is only only. <em>SuB27</em>: 64-80.
-          <span class="pub-links"><a href="assets/pdfs/adversative-only-is-only-only.pdf" target="_blank">[PDF]</a></span>
-        </li>
-        <li>
-          <strong>Benbaji, I.</strong> 2022.
-          Focus particles in verb-echo answers: An argument for Argument Ellipsis.
-          <em>NELS52</em>: 67-80.
-          <span class="pub-links"><a href="assets/pdfs/focus-particles-verb-echo-answers.pdf" target="_blank">[PDF]</a></span>
-        </li>
-        <li>
-          <strong>Benbaji, I.</strong>, O. Doron &amp; A. Hénot-Mortier. 2022.
-          Word-Embeddings Distinguish Denominal and Root-Derived Verbs in Semitic.
-          <em>E2ECOMPVEC, EPTCS366</em>: 35-49.
-          <span class="pub-links"><a href="assets/pdfs/word-embeddings-semitic-verbs.pdf" target="_blank">[PDF]</a></span>
-        </li>
-        <li>
-          <strong>Benbaji, I.</strong> 2021.
-          Restricting the Fourth Reading. <em>SALT31</em>: 221-240.
-          <span class="pub-links"><a href="assets/pdfs/restricting-the-fourth-reading.pdf" target="_blank">[PDF]</a></span>
-        </li>
-        <li>
-          <strong>Benbaji, I.</strong>, O. Doron &amp; R. Wang. 2021.
-          A New Diagnostic for Antonym Decomposition. <em>NELS51</em>: 51-64.
-          <span class="pub-links"><a href="assets/pdfs/new-diagnostic-antonym-decomposition.pdf" target="_blank">[PDF]</a></span>
-        </li>
+        <li>Feldcamp, Z. &amp; <strong>I. Benbaji-Elhadad</strong>. 2025. A well-formedness condition on alternative generation. <em>WCCFL 43</em>.</li>
+        <li><strong>Benbaji-Elhadad, I.</strong> &amp; J. Wehbe. 2024. On the semantics of unit fractions. <em>SuB28</em>: 131-149.</li>
+        <li><strong>Benbaji-Elhadad, I.</strong> &amp; O. Doron. 2024. How is presupposition accommodation constrained, again? <em>Amsterdam Colloquium 24</em>: 22-28.</li>
+        <li><strong>Benbaji-Elhadad, I.</strong> 2023. Preliminaries for a substitution of de re. <em>SALT33</em>: 358-378.</li>
+        <li><strong>Benbaji-Elhadad, I.</strong>, O. Doron &amp; A. Hénot-Mortier. 2023. Distinguishing levels of morphological derivation in word-embedding models. <em>NELS53</em>: 63-76.</li>
+        <li><strong>Benbaji, I.</strong> &amp; O. Doron. 2023. Adversative only is only only. <em>SuB27</em>: 64-80.</li>
+        <li><strong>Benbaji, I.</strong> 2022. Focus particles in verb-echo answers: An argument for Argument Ellipsis. <em>NELS52</em>: 67-80.</li>
+        <li><strong>Benbaji, I.</strong>, O. Doron &amp; A. Hénot-Mortier. 2022. Word-Embeddings Distinguish Denominal and Root-Derived Verbs in Semitic. <em>E2ECOMPVEC, EPTCS366</em>: 35-49.</li>
+        <li><strong>Benbaji, I.</strong> 2021. Restricting the Fourth Reading. <em>SALT31</em>: 221-240.</li>
+        <li><strong>Benbaji, I.</strong>, O. Doron &amp; R. Wang. 2021. A New Diagnostic for Antonym Decomposition. <em>NELS51</em>: 51-64.</li>
       </ul>
     </section>
 
@@ -307,22 +110,20 @@
 
     <section id="cv">
       <h2>CV</h2>
-      <object
-        data="assets/CV.pdf"
-        type="application/pdf"
+      <iframe
+        src="assets/CV.pdf"
         width="100%"
         height="900"
-        style="border: 1px solid var(--border); border-radius: 8px;"
-      >
-        <p>
-          Your browser can’t display PDFs inline.
-          <a href="assets/CV.pdf" target="_blank">Download the CV here.</a>
-        </p>
-      </object>
+        title="CV PDF"
+      ></iframe>
+      <p class="muted">
+        If the embedded view does not load,
+        <a href="assets/CV.pdf" target="_blank" rel="noopener">open CV in a new tab</a>.
+      </p>
     </section>
   </main>
 
-  <footer>
+  <footer class="container">
     © <span id="year"></span> Ido Benbaji-Elhadad
   </footer>
 
