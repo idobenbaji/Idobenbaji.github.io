@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 :root {
   --bg: #d7c9bc;
   --text: #08322e;
-  --left-width: 36vw;
-  --left-max: 460px;
+--left-width: 31vw;
+--left-max: 390px;
 }
 
 * { box-sizing: border-box; }
@@ -69,8 +69,8 @@ section[id] {
   display: grid;
   grid-template-columns: minmax(320px, 1fr) auto;
   align-items: center;
-  gap: 28px;
-  padding: 0 20px 0 26px;
+  gap: 48px;                 
+  padding: 0 54px 0 32px;    
 }
 
 .landing-about {
@@ -83,10 +83,11 @@ section[id] {
 
 .profile-photo {
   display: block;
-  width: min(36vw, 560px);
-  max-height: 82vh;
+  width: min(33vw, 520px);
+  max-height: 80vh;
   height: auto;
   object-fit: contain;
+  margin-right: 16px;       
 }
 
 /* content sections */
@@ -136,6 +137,9 @@ iframe {
 
 /* mobile */
 @media (max-width: 980px) {
+  body {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
   .sidebar {
     position: sticky;
     width: 100%;
