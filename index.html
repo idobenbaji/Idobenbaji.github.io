@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Fixed left column -->
   <aside class="sidebar">
-    <h1 class="site-name">Ido Benbaji-Elhadad</h1>
+    <h1>Ido Benbaji-Elhadad</h1>
 
-    <nav class="menu" aria-label="Main navigation">
+    <nav>
       <a href="#about">About</a>
       <a href="#publications">Publications</a>
       <a href="#presentations">Presentations</a>
@@ -19,24 +20,24 @@
     </nav>
   </aside>
 
+  <!-- Right column (scrolling) -->
   <main class="content">
-    <!-- Landing view: only the photo appears on the right -->
-    <section class="landing" aria-label="Profile photo">
-      <img src="assets/profile.png" alt="Ido Benbaji-Elhadad" class="landing-photo" />
+    <!-- Landing screen: ONLY photo -->
+    <section class="landing">
+      <img src="/assets/profile.png" alt="Ido Benbaji-Elhadad" class="profile-photo" />
     </section>
 
     <section id="about">
       <h2>About</h2>
       <p>
         I am a seventh year PhD candidate at the Department of Linguistics and Philosophy at MIT.
-        My research is in semantics, and its interphases with syntax and pragmatics.
-        See my work below.
+        My research is in semantics, and its interphases with syntax and pragmatics. See my work below.
       </p>
     </section>
 
     <section id="publications">
       <h2>Publications</h2>
-
+    
       <h3>Journal articles</h3>
       <ul>
         <li><strong>Benbaji-Elhadad, I.</strong> Accepted with minor revisions. Reconstruction, bare quantification, and the fourth reading. <em>Natural Language Semantics</em>.</li>
@@ -103,7 +104,7 @@
 
     <section id="cv">
       <h2>CV</h2>
-      <iframe src="assets/CV.pdf" title="CV PDF"></iframe>
+      <iframe src="/assets/CV.pdf" title="CV PDF"></iframe>
     </section>
   </main>
 </body>
