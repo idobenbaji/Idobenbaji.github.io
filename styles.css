@@ -42,7 +42,13 @@ header {
   object-fit: cover;
   border: 1px solid var(--border);
 }
-
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid red; /* temp debug */
+}
 h1 {
   margin: 0 0 0.2rem;
   font-size: 2rem;
