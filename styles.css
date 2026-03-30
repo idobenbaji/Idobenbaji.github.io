@@ -55,7 +55,7 @@ body {
 .content {
   margin-left: min(var(--left-width), var(--left-max));
   min-height: 100vh;
-  border-left: 1px solid rgba(8, 50, 46, 0.99);
+  border-left: 1px solid rgba(8, 50, 46, 1.5);
 }
 
 /* first screen only photo, flush right */
@@ -149,7 +149,7 @@ iframe {
   .content {
   margin-left: 0;
   border-left: none;
-  border-top: 1px solid rgba(8, 50, 46, 0.99);
+  border-top: 1px solid rgba(8, 50, 46, 1.5);
 }
 
   .landing {
