@@ -203,18 +203,18 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 14px;
-  padding: 28px 16px 12px; /* same top spacing feel as other sections */
+  gap: 20px;              /* more space between photo and text */
+  padding: 34px 16px 12px;/* more space below menu bar */
 }
 
 .profile-photo {
-  order: 1; /* photo first */
+  order: 1;
   width: min(76vw, 380px);
-  max-height: 38vh;
+  max-height: 35vh;       /* keeps photo+text fitting on one screen */
   align-self: center;
   margin: 0;
 }
-
+  
 .landing-about {
   order: 2; /* text second */
   max-width: 100%;
