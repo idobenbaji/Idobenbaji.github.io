@@ -51,6 +51,13 @@ body {
   font-weight: 500;
 }
 
+.sidebar nav .sub-link {
+  font-size: clamp(14px, 1.25vw, 20px);  /* smaller than main items */
+  margin-left: 18px;                     /* indentation */
+  line-height: 1.1;
+  opacity: 0.95;
+}
+
 /* RIGHT: scrolling area */
 .content {
   margin-left: min(var(--left-width), var(--left-max));
@@ -167,6 +174,10 @@ iframe {
     white-space: nowrap;
     line-height: 1;
   }
+
+  .sidebar nav .sub-link {
+  display: none;
+}
 
   .content {
     margin-left: 0;
