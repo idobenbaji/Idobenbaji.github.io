@@ -46,15 +46,23 @@ body {
 .sidebar nav a {
   text-decoration: none;
   color: var(--text);
+  display: block;
+}
+
+/* main items */
+.sidebar nav > a:not(.sub-link) {
   font-size: clamp(18px, 1.7vw, 26px);
   line-height: 1.15;
   font-weight: 500;
+  margin-left: 0;
 }
 
-.sidebar nav .sub-link {
-  font-size: clamp(14px, 1.25vw, 20px);  /* smaller than main items */
-  margin-left: 18px;                     /* indentation */
+/* subsection items: clearly smaller + indented */
+.sidebar nav > a.sub-link {
+  font-size: clamp(13px, 1.05vw, 16px) !important;
   line-height: 1.1;
+  font-weight: 400;
+  margin-left: 22px;
   opacity: 0.95;
 }
 
@@ -169,16 +177,15 @@ iframe {
     gap: 6px;
   }
 
-  .sidebar nav a {
-    font-size: clamp(13px, 3.2vw, 16px);
-    white-space: nowrap;
-    line-height: 1;
-  }
-
-  .sidebar nav .sub-link {
-  display: none;
+ .sidebar nav > a:not(.sub-link) {
+  font-size: clamp(13px, 3.2vw, 16px);
+  white-space: nowrap;
+  line-height: 1;
 }
 
+.sidebar nav > a.sub-link {
+  display: none !important;
+}
   .content {
     margin-left: 0;
     border-left: none;
