@@ -151,7 +151,11 @@ iframe {
 }
 
 /* mobile */
+.cv-mobile-link { display: none; }
+
 @media (max-width: 980px) {
+  .cv-embed { display: none; }
+  .cv-mobile-link { display: block; }
   body {
   font-family: "Cormorant Garamond", Georgia, serif;
 }
