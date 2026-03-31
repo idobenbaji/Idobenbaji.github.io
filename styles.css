@@ -203,7 +203,7 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 20px;              /* more space between photo and text */
+  gap: 25px;              /* more space between photo and text */
   padding: 34px 16px 12px;/* more space below menu bar */
 }
 
